@@ -128,13 +128,13 @@ class ConvVAE(object):
         idx += 1
 
   # Making a method that loads saved VAE weights from a JSON file
-  def load_json(self, jsonfile='vae.json'):
+  def load_json(self, jsonfile='Weights/vae_weights.json'):
     with open(jsonfile, 'r') as f:
       params = json.load(f)
     self.set_model_params(params)
 
   # Making a method that saves trained VAE weights into a JSON file
-  def save_json(self, jsonfile='vae.json'):
+  def save_json(self, jsonfile='Weights/vae_weights.json'):
     model_params, model_shapes, model_names = self.get_model_params()
     qparams = []
     for p in model_params:
